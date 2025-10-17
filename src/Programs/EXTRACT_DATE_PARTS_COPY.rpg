@@ -1,8 +1,0 @@
-H DATFMT(*ISO)
-
-DDT1              S               D   INZ(D'2004-12-10')
-DTR               S              4S 0 INZ(0)
-
-C                   EXTRCT    DDT1:*Y        DTR
-C     DTR           DSPLY
-C                   EVAL      *INLR = *ON
