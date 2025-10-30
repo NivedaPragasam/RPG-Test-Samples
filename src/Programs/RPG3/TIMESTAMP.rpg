@@ -1,0 +1,13 @@
+H TIMFMT(*ISO)
+
+DTS1              S               Z   INZ(Z'2004-12-10-10.12.20.000000')
+
+C                   TEST                    DTS1                   55
+C                   IF        *IN55 = *OFF
+C     'TS1 valid'   DSPLY
+C                   ENDIF
+
+C* OUTPUT : TS1 VALID
+
+C                   DSPLY                   DTS1
+C                   EVAL      *INLR = *ON

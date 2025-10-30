@@ -1,0 +1,7 @@
+H DATFMT(*DMY/)
+
+DENDDT            S               D   DATFMT(*DMY)
+
+C                   MOVE      *DATE         DENDDT
+C     DENDDT        DSPLY
+C                   SETON                                        LR
