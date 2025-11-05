@@ -1,0 +1,29 @@
+H**************************************************************
+H* Program: BATCHRD15 (RPG III)
+H* Logic: Iterate keyed records, validate status, update flag.
+H**************************************************************
+FEMPFILE   UF   E           K DISK
+I            1   1  STATUS
+I            2   2  FLAG
+I            3  12  EMPKEY
+C                   MOVEL     'DPT001'      EMPKEY
+C     EMPKEY    SETLL     EMPFILE
+C                   READE     EMPFILE                         91
+C                   DOW       *IN91 = '0'
+C                   IF        STATUS = 'A'
+C                   IF        FLAG   = 'N'
+C                   MOVEL     'Y'          FLAG
+C                   UPDATE    EMPFILER
+C                   ELSE
+C                   EXCPT     MSGSKP
+C                   ENDIF
+C                   ELSE
+C                   EXCPT     MSGINV
+C                   ENDIF
+C                   READE     EMPFILE                         91
+C                   ENDDO
+C                   SETON                                        LR
+OQSYSPRT   E                                        MSGSKP
+O                                           'ALREADY FLAGGED — SKIP'
+OQSYSPRT   E                                        MSGINV
+O                                           'INACTIVE — SKIP'

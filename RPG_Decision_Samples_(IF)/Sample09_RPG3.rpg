@@ -1,0 +1,22 @@
+H****************************************************************
+H* RPG IV (ILE, Fixed-Form) — ACCTUPD09
+H****************************************************************
+FACCOUNTS  UF   E           K DISK
+C                   EVAL      KEY       = 'A0001'
+C     KEY       CHAIN     ACCOUNTS                        90
+C                   IF        *IN90 = *OFF
+C                   EVAL      BAL       = BAL + 100.00
+C                   IF        STATUS    = 'C'
+C                   EVAL      FLAGS     = 'H'
+C                   ELSEIF     STATUS    = 'A'
+C                   EVAL      FLAGS     = 'N'
+C                   ELSE
+C                   EVAL      FLAGS     = 'R'
+C                   ENDIF
+C                   UPDATE    ACCOUNTR
+C                   ELSE
+C                   EXCPT     MSGNF
+C                   ENDIF
+C                   SETON                                        LR
+OQSYSPRT   E                                        MSGNF
+O                                           'ACCOUNT NOT FOUND'

@@ -1,0 +1,19 @@
+H**************************************************************
+H* Program: VALNUM21 (RPG III)
+H* Logic: Validate numeric range; nested IF for thresholds.
+H**************************************************************
+FNUMFILE   UF   E           K DISK
+I            1   5  VALUE     5 0
+I            6   6  STATUS
+C                   Z-ADD     42            VALUE
+C                   IF        VALUE > 100
+C                   MOVEL     'H'          STATUS
+C                   ELSE
+C                   IF        VALUE >= 50
+C                   MOVEL     'M'          STATUS
+C                   ELSE
+C                   MOVEL     'L'          STATUS
+C                   ENDIF
+C                   ENDIF
+C                   UPDATE    NUMFILER
+C                   SETON                                        LR
