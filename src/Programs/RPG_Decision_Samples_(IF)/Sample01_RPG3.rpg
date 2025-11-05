@@ -1,0 +1,34 @@
+H**************************************************************
+H* Program: ADDCUST01 (RPG III)
+H* Logic: Add customer when not found; nested IF for else-if.
+H**************************************************************
+FRCUST     IF   E           K DISK
+H* Indicators
+I            1   1  STATUS
+C                   Z-ADD     0             ERRFLG        5 0
+C                   Z-ADD     0             ADDFLG        5 0
+C                   MOVEL     'C00001'      KEY
+C     KEY       CHAIN     RCUST                           90
+C                   IF        *IN90 = '1'              /* Not Found */
+C                   Z-ADD     1             ADDFLG
+C                   ELSE                                /* Found */
+C                   IF        STATUS = 'D'             /* Nested ELSE-IF */
+C                   Z-ADD     1             ERRFLG
+C                   ELSE
+C                   Z-ADD     0             ERRFLG
+C                   ENDIF
+C                   ENDIF
+C                   IF        ADDFLG = 1
+C                   WRITE     RCUSTR                           /* Format */
+C                   ELSE
+C                   IF        ERRFLG = 1
+C                   EXCPT     MSGERR                           /* Print/Error */
+C                   ELSE
+C                   EXCPT     MSGINF
+C                   ENDIF
+C                   ENDIF
+C                   SETON                                        LR
+OQSYSPRT   E                                        MSGERR
+O                                           'DELETE REQUESTED — ABORT ADD'
+OQSYSPRT   E                                        MSGINF
+O                                           'RECORD EXISTS — NO ACTION'
