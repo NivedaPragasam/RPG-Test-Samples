@@ -1,0 +1,12 @@
+// Language: RPGIII (fixed format) - Product type bucket with SELECT operand and OTHER
+     * Product type code classification
+C                   SELECT                   ProdType
+C                   WHENEQ                   'SRV'
+C                   EVAL      Bucket='SERVICE'
+C                   WHENEQ                   'HW'
+C                   EVAL      Bucket='HARDWARE'
+C                   WHENEQ                   'SW'
+C                   EVAL      Bucket='SOFTWARE'
+C                   OTHER
+C                   EVAL      Bucket='OTHER'
+C                   ENDSL

@@ -1,0 +1,15 @@
+// Language: RPGLE (free format) - Date windowing with %RANGE and %DATE
+// Apply pricing tier based on order date ranges
+dcl-s orderDate date;
+dcl-s tier char(10);
+
+select;
+  when orderDate in %range(%date('2025-11-01') : %date('2025-11-30'));
+     tier = 'BLACKFRI';
+  when orderDate in %range(%date('2025-12-01') : %date('2025-12-31'));
+     tier = 'HOLIDAY';
+  when orderDate < %date('2025-11-01');
+     tier = 'STANDARD';
+  other;
+     tier = 'POST-HOL';
+endsl;

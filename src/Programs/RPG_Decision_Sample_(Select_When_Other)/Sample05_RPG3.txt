@@ -1,0 +1,12 @@
+// Language: RPGIII (fixed format) - Transaction type routing with SELECT operand and WHENEQ
+     * Route by transaction type code (C=Credit, D=Debit, R=Refund)
+C                   SELECT                   TranType
+C                   WHENEQ                   'C'
+C                   EXSR      PostCredit
+C                   WHENEQ                   'D'
+C                   EXSR      PostDebit
+C                   WHENEQ                   'R'
+C                   EXSR      PostRefund
+C                   OTHER
+C                   EXSR      PostUnknown
+C                   ENDSL

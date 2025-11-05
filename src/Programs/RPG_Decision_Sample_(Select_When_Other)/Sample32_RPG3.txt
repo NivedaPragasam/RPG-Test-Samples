@@ -1,0 +1,18 @@
+// Language: RPGLE (free format) - Shipment priority based on SLA dates using %DIFF
+// Prioritize by days remaining until SLA date
+dcl-s today date inz(%date());
+dcl-s sla date;
+dcl-s daysLeft int(10);
+
+daysLeft = %diff(sla: today : *d);
+
+select;
+  when daysLeft <= 0;
+     expedite();
+  when daysLeft in %range(1:2);
+     highPriority();
+  when daysLeft in %range(3:7);
+     normalPriority();
+  other;
+     lowPriority();
+endsl;

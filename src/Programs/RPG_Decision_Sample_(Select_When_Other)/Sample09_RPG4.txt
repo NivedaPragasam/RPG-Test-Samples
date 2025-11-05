@@ -1,0 +1,18 @@
+// Language: RPGLE (free format) - Menu process control with function keys and indicators
+// Simple menu loop; F3=Exit, F5=Refresh, F9=Details
+dcl-s cmdKey packed(3:0);
+dcl-s done ind inz(*off);
+
+dow not done;
+  exfmt MENUSCR;     // screen I/O sets cmdKey
+  select;
+    when cmdKey = 3;
+       done = *on;
+    when cmdKey = 5;
+       refreshMenu();
+    when cmdKey = 9;
+       showDetails();
+    other;
+       sndMsg('Unsupported key: ' + %char(cmdKey));
+  endsl;
+enddo;

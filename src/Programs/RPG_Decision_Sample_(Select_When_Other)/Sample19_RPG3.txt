@@ -1,0 +1,10 @@
+// Language: RPGIII (fixed format) - Fraud detection thresholds with WHENxx numeric comparisons
+     * Simple fraud checks on amount and velocity
+C                   SELECT
+C                   WHENGE                 Amount:10000
+C                   EXSR      FlagBigTxn
+C                   WHENGE                 TxnPerHour:50
+C                   EXSR      FlagVelocity
+C                   OTHER
+C                   EXSR      ClearFlags
+C                   ENDSL

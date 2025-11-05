@@ -1,0 +1,14 @@
+// Language: RPGLE (free format) - Subscription renewal window using date math
+// Renewal allowed within 30 days before expiry
+dcl-s expiry date;
+dcl-s today date inz(%date());
+dcl-s decision char(12);
+
+select;
+  when today > expiry;
+     decision = 'EXPIRED';
+  when today in %range(expiry - %days(30) : expiry);
+     decision = 'RENEWABLE';
+  other;
+     decision = 'ACTIVE';
+endsl;

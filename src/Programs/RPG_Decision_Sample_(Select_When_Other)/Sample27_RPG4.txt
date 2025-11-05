@@ -1,0 +1,11 @@
+// Language: RPGLE (free format) - Character classification using %CHECK, SELECT without operand
+// Ensure product code is alphanumeric
+dcl-s prod char(12);
+dcl-s valid ind;
+
+select;
+  when %check('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789':%upper(prod)) > 0;
+     valid = *off;
+  other;
+     valid = *on;
+endsl;

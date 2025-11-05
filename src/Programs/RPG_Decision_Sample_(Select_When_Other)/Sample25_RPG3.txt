@@ -1,0 +1,12 @@
+// Language: RPGIII (fixed format) - Discount ladder by quantity with WHENxx inequalities
+     * Discount ladder by quantity
+C                   SELECT                   Qty
+C                   WHENLT                   10
+C                   EVAL      Disc = 0
+C                   WHENLT                   50
+C                   EVAL      Disc = 5
+C                   WHENLT                   100
+C                   EVAL      Disc = 10
+C                   WHENGE                   100
+C                   EVAL      Disc = 15
+C                   ENDSL

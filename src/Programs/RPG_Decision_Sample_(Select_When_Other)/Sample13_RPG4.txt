@@ -1,0 +1,16 @@
+// Language: RPGLE (free format) - Form field validation combining character and numeric logic
+// Validate user input fields
+dcl-s email char(50);
+dcl-s age packed(3:0);
+dcl-s valid ind;
+
+select;
+  when %scan('@':email) = 0;
+     valid = *off;  // missing '@'
+  when age < 18;
+     valid = *off;  // underage
+  when %len(%trim(email)) > 50;
+     valid = *off;  // too long
+  other;
+     valid = *on;
+endsl;

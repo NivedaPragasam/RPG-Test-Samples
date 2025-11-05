@@ -1,0 +1,15 @@
+// Language: RPGLE (free format) - Credit limit enforcement with numeric ranges
+// Approve/Review/Block based on creditAmount
+dcl-s creditAmount packed(9:2);
+dcl-s decision char(10);
+
+select;
+  when creditAmount in %range(0:1000);
+     decision = 'APPROVE';
+  when creditAmount in %range(1000.01:5000);
+     decision = 'REVIEW';
+  when creditAmount > 5000;
+     decision = 'BLOCK';
+  other;
+     decision = 'INVALID';
+endsl;

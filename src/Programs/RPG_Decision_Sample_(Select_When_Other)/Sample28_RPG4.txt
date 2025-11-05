@@ -1,0 +1,14 @@
+// Language: RPGLE (free format) - Timeout handling path selection by count
+// Decide on retry/backoff based on timeout count
+dcl-s timeouts packed(3:0);
+
+select;
+  when timeouts = 0;
+     proceed();
+  when timeouts in %range(1:3);
+     backoff(1);
+  when timeouts in %range(4:5);
+     backoff(5);
+  other;
+     circuitOpen();
+endsl;

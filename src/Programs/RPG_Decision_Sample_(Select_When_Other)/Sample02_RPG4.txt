@@ -1,0 +1,18 @@
+// Language: RPGLE (free format) - Case-insensitive command processing using %UPPER and IN
+// Process user command; case-insensitive; WHEN with IN and OTHER
+dcl-s cmd char(10);
+dcl-s action char(20);
+
+cmd = %upper(%trim(cmd));  // normalize
+
+select;
+  when cmd in %list('HELP':'H');
+     action = 'SHOW_HELP';
+  when cmd in %list('EXIT':'QUIT':'Q');
+     action = 'TERMINATE';
+  when cmd = 'SAVE';
+     action = 'COMMIT_CHANGES';
+  other;
+     action = 'UNKNOWN_CMD';
+     callp LogError('Unknown command: ' + cmd);
+endsl;

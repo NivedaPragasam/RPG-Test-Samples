@@ -1,0 +1,22 @@
+// Language: RPGLE (free format) - Workflow stage with nested review branch
+// Document workflow: DRAFT -> REVIEW -> APPROVE/REJECT
+dcl-s stage char(10);
+dcl-s reviewer char(10);
+
+select;
+  when stage = 'DRAFT';
+     saveDraft();
+  when stage = 'REVIEW';
+     select;
+       when %trim(reviewer) = '';
+         assignReviewer();
+       other;
+         requestReview(reviewer);
+     endsl;
+  when stage = 'APPROVED';
+     publish();
+  when stage = 'REJECTED';
+     sendBack();
+  other;
+     archive();
+endsl;
