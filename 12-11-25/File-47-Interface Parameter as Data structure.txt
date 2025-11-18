@@ -1,0 +1,15 @@
+ DDS0              DS                                                            130201
+ DFLD1                            2  0                                           130201
+ DFLD2                            2  0                                           130201
+  *                                                                              130201
+ DCALLP1           PR                                                            130201
+ Dp                               2  0                                           130125
+ Dq                               2  0                                           130125
+ DDS_PARM0                             LIKEDS(DS0)                               130201
+ C                   Z-ADD     11            a                 2 0               130201
+ C                   Z-ADD     22            b                 2 0               130201
+  *                                                                              130125
+ C                   CALLP     CALLP1(a:b:DS0)                                   130201
+ C     DS0           DSPLY                                                       130201
+ C                   SETON                                        LR             130125
+  *                                                                     

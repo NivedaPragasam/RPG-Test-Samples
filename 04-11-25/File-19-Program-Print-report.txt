@@ -1,0 +1,17 @@
+0001.00      FMASTER  IF  E           K        DISK                            
+0002.00      FPRINT4  O   E             90     PRINTER                         
+0003.00       *                                                                 
+0003.01       *                                                                
+0003.02      C                     Z-ADD0         COUNT   20                   
+0005.00      C                     WRITEHEADER                                  
+0006.00      C                     READ REC1                     80            
+0007.00      C           *IN80     DOWEQ*OFF                                   
+0007.01      C                     WRITEDETAIL                 90               
+0007.02      C   90                WRITEHEADER                                 
+0007.03      C                     ADD  1         COUNT                        
+0007.04      C                     READ REC1                     80            
+0008.00      C                     ENDDO                                       
+0008.01      C                     MOVELCOUNT     TOTAL                        
+0008.02      C                     WRITEFOOTER                                 
+0009.00      C                     SETON                     LR  
+ 

@@ -1,0 +1,15 @@
+FPFBM      IP   F   21        DISK                                 
+FQPRINT    O    F   80        PRINTER OFLIND(*IN20)                
+IPFBM      AA                                                      
+I                                  1    4 0CODE                    
+I                                  5   14  NAME                    
+I                                 15   21 2PRICE                   
+C   20              SETOFF                                       20
+OQPRINT    H    1P                  1  1                           
+O                                           40 '<TITLE COMES HERE>'
+O          D                        1  1                           
+O                       CODE          Z     10                     
+O                       NAME                30                     
+O                       PRICE         Q     60                     
+O          T    20                  1  1                           
+O                                           78 '------------------'

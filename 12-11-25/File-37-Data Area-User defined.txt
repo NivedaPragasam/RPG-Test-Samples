@@ -1,0 +1,15 @@
+0004.00 C     *DTAARA       DEFINE                  DA               12
+0005.00 C     *ENTRY        PLIST
+0006.00 C                   PARM                    A1               12
+0007.00 C     *LOCK         IN        DA              >>>>Lock and Read the data area DA
+0008.00 C                   MOVEL     DA            C                12
+0009.00 C                   MOVEL     *ZEROS        I                12 0
+0010.00 C                   EVAL      I=%INT(C)
+0011.00 C                   ADD       1             I
+0012.00 C                   EVAL      C=%CHAR(I)
+0013.00 C                   MOVEL     C             DA
+0015.00 C                   MOVEL     C             A1
+0016.00 C                   OUT       DA                >>>>>>> Write/Update the data area
+0017.00 C                   UNLOCK    DA                >>>>>>> Unlock the data area
+0019.00 C                   SETON                                        LR
+0020.00 C                   return

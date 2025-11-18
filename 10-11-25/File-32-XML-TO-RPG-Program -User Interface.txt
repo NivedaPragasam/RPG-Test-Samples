@@ -1,0 +1,22 @@
+ *free
+  dcl-c XML1 '<People>+
+                <Person>+
+                  <Name>Simon Hutchinson</Name>+
+                  <City>Los Angeles</City>+
+                  <State>CA</State>+
+                </Person>+
+                <Person>+
+                  <Name>Donald Trump</Name>+
+                  <City>Washington</City>+
+                  <State>DC</State>+
+               </Person>+
+              </People>' ;
+
+  dcl-ds Person dim(10) qualified ;
+    Name varchar(50) ;
+    City varchar(30) ;
+    State char(2) ;
+  end-ds ;
+
+  xml-into Person %xml(XML1:'case=any') ;
+  *inlr = *on ; 

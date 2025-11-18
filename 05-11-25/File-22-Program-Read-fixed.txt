@@ -1,0 +1,13 @@
+001.00 FPF0001    IF   E           K DISK
+0002.00 DDS1              DS                  LIKEREC(REC2)
+0003.00 C     *LOVAL        SETLL     REC2
+0004.00 C                   READ      PF0001        DS1                      90
+0005.00 C                   DOW       *IN90=*OFF    >>>>>> *in90 at EQ-position indicates
+0006.00 C     DS1           DSPLY                             EOF() condition
+0007.00 C                   READ      PF0001        DS1                      90
+0008.00 C                   ENDDO
+0009.00 C                   IF        *IN90=*ON
+0010.00 C     'END OF FILE' DSPLY
+0011.00 C                   ENDIF
+0012.00 C                   SETON                                        LR
+

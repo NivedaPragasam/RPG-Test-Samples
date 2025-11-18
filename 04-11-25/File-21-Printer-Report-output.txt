@@ -1,0 +1,18 @@
+                            Display Spooled File                             
+ File  . . . . . :   PRINT4                           Page/Line   1/1          
+ Control . . . . .                                    Columns     1 - 78       
+ Find  . . . . . .                                                             
+ *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+...
+    ORG      ACCOUNT NO         CCY          PARTY NO                          
+    190      A00000000001       EUR          P00000000001                      
+    190      A00000000006       USD          P00000000006                      
+    190      A00000000009       TRY          P00000000009                      
+    191      A00000000002       USD          P00000000002                      
+    191      A00000000004       EUR          P00000000004                      
+    191      A00000000005       USD          P00000000005                      
+    191      A00000000007       EUR          P00000000007                      
+    191      A00000000008       USD          P00000000008                      
+             TOTAL CUSTOMER FOUND = 08                                         
+                                                                               
+                                                                         Bottom
+ F3=Exit   F12=Cancel   F19=Left   F20=Right   F24=More keys     

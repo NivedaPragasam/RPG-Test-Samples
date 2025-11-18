@@ -1,0 +1,14 @@
+ DDADS1           UDS                  DTAARA('DTA1')
+ DFLD1                     1      4
+ DFLD2                     6      7
+ DFLD3                     9     14
+ DFLD4                    16     19
+ DFLD5                    21     30
+ C                   IN        DADS1          >>>>>> Data area READ operation
+ C     FLD1          DSPLY
+ C     FLD2          DSPLY
+ C     FLD3          DSPLY
+ C     FLD4          DSPLY
+ C     FLD5          DSPLY
+ C                   OUT       DADS1          >>>>>> Data area WRITE operation
+ C                   SETON                                        LR

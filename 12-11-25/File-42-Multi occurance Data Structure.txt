@@ -1,0 +1,14 @@
+ D DS1             DS                  OCCURS(10)                                130118
+ D FLD01                   1      5                                              130130
+ D FLD02                   6     10                                              130130
+ DX                S              2  0 INZ(1)                                    130118
+ DN                S              2  0 INZ(1)                                    130130
+ C     X             DO        5                                                 130130
+ C     X             OCCUR     DS1           N                                   130130
+ C                   EVAL      FLD01=%char(X)                                    130130
+ C                   EVAL      FLD02=%char(X)                                    130130
+ C                   EVAL      X=X+1                                             130118
+ C     DS1           DSPLY                                                       130118
+ C     N             DSPLY                                                       130130
+ C                   ENDDO                                                       130118
+ C                   SETON                                        LR       
