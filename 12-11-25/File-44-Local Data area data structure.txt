@@ -1,7 +1,0 @@
- D DS1            UDS                  DTAARA(*LDA)
- DFLD001                   1     50A
-
- C                   IN        DS1
- C     FLD001        DSPLY
- C                   OUT       DS1
- C                   SETON                                        LR

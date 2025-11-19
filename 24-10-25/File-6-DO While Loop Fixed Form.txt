@@ -1,9 +1,0 @@
-DN                S              5i 0
-     C                   DOW       N <=4
-     C                   EVAL      N=N+1
-     C     N             IFEQ      2
-     C                   ITER
-     C                   ENDIF
-     C     N             DSPLY
-     C                   ENDDO
-     C                   EVAL      *INLR = *ON

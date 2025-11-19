@@ -1,9 +1,0 @@
-0001.00 FPF0001    IF   E           K DISK                                              
-0002.00 C     *HIVAL        SETLL     PF0001                                            
-0003.00 C                   READP     PF0001                                           
-0004.00 C                   DOW       NOT %EOF()                                        
-0005.00 C     PNUM          DSPLY                                                       
-0006.00 C                   READP     PF0001                                            
-0007.00 C                   ENDDO                                                       
-0008.00 C                   SETON                                        LR             
-
