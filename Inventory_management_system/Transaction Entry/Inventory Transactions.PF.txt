@@ -1,0 +1,12 @@
+A*  -------------------------------------------------------------
+A*  INVTRANP - Inventory Transaction Physical File
+A*  -------------------------------------------------------------
+A          R INVTRANR                  TEXT('Transaction Record')
+A            TRNKEY        10S 0       TEXT('Unique Transaction Key')
+A            TRNDATE        8S 0       TEXT('Transaction Date (YYYYMMDD)')
+A            TRNTYPE        1A         TEXT('Transaction Type (R=Receive, I=Issue)')
+A            TRNITEM        7A         TEXT('Item Number')
+A            TRNSRC        10A         TEXT('Source (e.g., Vendor, Customer)')
+A            TRNQTY         7P 0       TEXT('Transaction Quantity')
+A*
+A          K TRNKEY

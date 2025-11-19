@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+-- STOCK BY LOCATION (Per-bin stock)
+---------------------------------------------------------------
+CREATE TABLE INVENTORY.STOCK_BY_LOCATION (
+  ITEMID       CHAR(10) NOT NULL,
+  LOCATION     CHAR(10) NOT NULL,
+  QTY_ON_HAND  DECIMAL(15,2) DEFAULT 0 NOT NULL,
+  PRIMARY KEY (ITEMID, LOCATION)
+);

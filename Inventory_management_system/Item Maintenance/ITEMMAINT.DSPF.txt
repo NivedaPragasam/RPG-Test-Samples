@@ -1,0 +1,30 @@
+A*===============================================================
+A* ITEMMAINT - ITEM MASTER MAINTENANCE SCREEN
+A*===============================================================
+A                                      DSPSIZ(24 80 *DS3)
+A                                      INDARA
+A                                      CF03(03)
+A                                      CF04(04)
+A                                      CF06(06)
+A                                      CF10(10)
+A                                      CF12(12)
+A            R MAINREC
+A                                      OVERLAY
+A                                      CSRLOC(1 1)
+A  1  2'Item ID :'
+A            ITEMID        10A  B  1 12
+A  2  2'Description :'
+A            ITEMDESC      50A  B  2 12
+A  3  2'UOM       :'
+A            UOM            3A  B  3 12
+A  4  2'Qty On Hand :'
+A            QTY_ON_HAND   15P 2B  4 12
+A  5  2'Qty Allocated :'
+A            QTY_ALLOC     15P 2B  5 12
+A  6  2'Reorder Level :'
+A            REORDER_LEVEL 15P 2B  6 12
+A  7  2'Location :'
+A            LOCATION      10A  B  7 12
+A  8  2'Status (A/I):'
+A            STATUS        1A   B  8 20
+A 23  1'F3=Exit   F4=Find   F6=Delete   F10=Save   F12=Clear'
