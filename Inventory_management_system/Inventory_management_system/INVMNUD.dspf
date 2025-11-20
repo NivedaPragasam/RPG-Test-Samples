@@ -1,0 +1,40 @@
+A*  -------------------------------------------------------------
+A*  INVMNUD - Inventory Management System Menu Display File
+A*  -------------------------------------------------------------
+A                                      DSPSIZ(24 80 *DS3)
+A                                      CF(99)
+A          R MNUSUBR                   SFL
+A            SFLOPT         2S 0H      SFLN(10)
+A            SFLTXT        50A 0O
+A          R MNUKYHD                   SFLCTL(MNUSUBR)
+A                                      OVERLAY
+A                                      CA03(03 'Exit')
+A                                      ROLLUP(27)
+A                                      CSRLOC(SFLOPT)
+A                                      WINDOW(1 1 20 60)
+A                                      WDWCAP(*NONE)
+A                                      WDWBDR(*COLOR BLACK)
+A                                      WDWFMT(*WHITE)
+A                                      WDWBGF(*COLOR BLU)
+A                                      WDWDFT(*COLOR BLU)
+A                                      WDWBGF(*NONE)
+A                                      WDWDFT(*NONE)
+A                                  1 25'Inventory Management Menu'
+A                                      COLOR(PNK)
+A                                      DSPATR(HI)
+A                                      DSPATR(CS)
+A                                  3  2'Select an option:'
+A                                      COLOR(WHT)
+A                                  5  5'1. Add/Update Item'
+A                                      COLOR(CYN)
+A                                  6  5'2. Receive Inventory'
+A                                      COLOR(CYN)
+A                                  7  5'3. Issue Inventory'
+A                                      COLOR(CYN)
+A                                  8  5'4. View Inventory Levels'
+A                                      COLOR(CYN)
+A                                  9  5'5. Exit'
+A                                      COLOR(CYN)
+A                                  22 2'Enter Option and Press Enter'
+A                                      COLOR(WHT)
+A            MNUOPT         2A  B 22 25

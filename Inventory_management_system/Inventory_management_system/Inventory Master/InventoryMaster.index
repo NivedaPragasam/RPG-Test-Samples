@@ -1,0 +1,8 @@
+---------------------------------------------------------------
+-- Indexes
+---------------------------------------------------------------
+CREATE INDEX INVENTORY.IX_ITEMS_LOC
+  ON INVENTORY.ITEMS (ITEMID, LOCATION);
+
+CREATE INDEX INVENTORY.IX_TRANS_ITEM
+  ON INVENTORY.TRANSACTIONS (ITEMID, TRANS_DATE);
