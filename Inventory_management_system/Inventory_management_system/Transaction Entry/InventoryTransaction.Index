@@ -1,5 +1,0 @@
----------------------------------------------------------------
--- Indexes
----------------------------------------------------------------
- CREATE INDEX INVENTORY.IX_TRANS_ITEM
-  ON INVENTORY.TRANSACTIONS (ITEMID, TRANS_DATE);
