@@ -25,6 +25,4 @@ dcl-proc POSTTRANS;
   endif;
 
 end-proc;
-Compile with:
-CRTSQLRPGI OBJ(INVENTPGM/POSTTRANS) SRCFILE(INVENTPGM/QRPGLESRC)
-
+ 
