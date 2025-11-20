@@ -1,4 +1,0 @@
-     C     *IN03         DOU       COUNT >= 5
-     C                   DSP      'Count='        COUNT
-     C                   EVAL      COUNT = COUNT + 1
-     C                   ENDDO
