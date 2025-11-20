@@ -1,4 +1,0 @@
-CUSTID	PACKED	5,0	Customer ID
-CUSTNM	CHAR	25	Customer Name
-CITY	CHAR	20	City
-BAL	PACKED	7,2	Balance

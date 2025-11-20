@@ -1,9 +1,0 @@
-Djsr              S             20A
-     Djsr1             S             20A
-     C                   EVAL      jsr1= 'string1'
-     C                   EVAL      jsr = 'string2'
-     C                   if        jsr1 <> jsr
-     C                   EVAL      jsr1='xx'
-     C                   endif
-     C     jsr1          DSPLY
-     C                   EVAL      *INLR = *ON
