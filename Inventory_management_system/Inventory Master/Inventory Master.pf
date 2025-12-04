@@ -1,0 +1,12 @@
+A*  -------------------------------------------------------------
+A*  INVITEMP - Inventory Item Master Physical File
+A*  -------------------------------------------------------------
+A          R INVITEMR                  TEXT('Item Master Record')
+A            ITMNUM         7A         TEXT('Item Number')
+A            ITMDSCR       30A         TEXT('Item Description')
+A            ITMQTY         7P 0       TEXT('Quantity on Hand')
+A            ITMCST         7P 2       TEXT('Unit Cost')
+A            ITMSLPR        7P 2       TEXT('Selling Price')
+A            ITMRORD       7P 0       TEXT('Reorder Point')
+A*
+A          K ITMNUM
